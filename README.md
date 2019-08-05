@@ -7,7 +7,11 @@ Example
 Hola buen día, este es un párrafo de texto que será dividído por este código
 
 -- Hola buen día, este 
+
 -- es un párrafo de 
+
 -- texto que será 
+
 -- dividído por este 
+
 -- código 
