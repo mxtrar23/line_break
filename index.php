@@ -5,14 +5,14 @@ function line_break($text,$characters){
   $TEMP_COUNTchars=0;//caracteres actuales por linea
   $TEMPchars='';
   foreach ($words as $key => $value) {//recorremos las palabras
-    $count =strlen($value);
+    $count =strlen($value);//cantidad de caracteres de la palabra
     if (($count+$TEMP_COUNTchars)<=$characters) {
       $TEMPchars.=$value.' ';
       $TEMP_COUNTchars+=($count+1);
     }else {
       array_push($output,$TEMPchars);
-      $TEMPchars=$value;
-      $TEMP_COUNTchars+$count;
+      $TEMPchars=$value.' ';
+      $TEMP_COUNTchars=$count+1;
     }
   }
   if (!empty($TEMPchars)) {
@@ -20,5 +20,12 @@ function line_break($text,$characters){
   }
   return $output;
 }
-var_dump(line_break("1234 123 12345 1234 123 12",10));
+
+//Example
+$Text="Hola buen día, este es un párrafo de texto que será dividido por este código";
+$Characters=20;
+echo '<b>'.$Text.'</b><br>';
+foreach (line_break($Text,$Characters) as $key => $value) {
+  echo '-- '.$value.'<br>';
+}
 ?>
